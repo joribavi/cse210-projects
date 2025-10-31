@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+
 public class Fraction
 {
     //Atributes
@@ -35,10 +37,11 @@ public class Fraction
         return _top;
     }
 
-    public void SetTop(int topNumber)
+    public int SetTop(int topNumber)
     {
 
         _top = topNumber;
+        return _top;
     }
 
     public int GetBottom()
@@ -46,9 +49,32 @@ public class Fraction
         return _bottom;
     }
 
-    public void SetBottom(int bottomNumber)
+    public int SetBottom(int bottomNumber)
     {
         _bottom = bottomNumber;
+        return _bottom;
+    }
+
+    //Class Methods 
+
+    public string GetFractionString()
+
+    {
+        string topNumber = _top.ToString();
+        string bottomNumber = _bottom.ToString();
+
+        string fractionString = $"{topNumber}/{bottomNumber}";
+
+        return fractionString;
+
+    }
+    
+    public double GetDecimalValue()
+    {
+        double decimalValue = (double)_top / (double)_bottom; //declaring both values from int to double to get decimals 
+   
+        
+        return  decimalValue;
     }
 
 }
