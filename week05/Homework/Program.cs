@@ -10,7 +10,7 @@ class Program
 
         Console.WriteLine($"{summary1}");
 
-        MathAssignment mathAssignment1 = new MathAssignment();
+        MathAssignment mathAssignment1 = new MathAssignment("7.8","tipical Math Problems" , "John Doe", "tipical Topic" );
 
         string summary2 = mathAssignment1.GetSummary();
 
@@ -20,7 +20,7 @@ class Program
         Console.WriteLine($"{summary2}");
         Console.WriteLine($"{list1}");
 
-        WritingAssignment writingAssignment1 = new WritingAssignment();
+        WritingAssignment writingAssignment1 = new WritingAssignment("Linda Doe" , "tipical Writing topic" , "Writting Title");
         string summary3 = writingAssignment1.GetSummary();
         string list2 = writingAssignment1.GetWritingInformation();
         Console.WriteLine($"Test of the math Writing Assignment Class");

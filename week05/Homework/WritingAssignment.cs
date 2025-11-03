@@ -4,7 +4,7 @@ public class WritingAssignment: Assignment
     public string _title;
 
     //constructor
-    public WritingAssignment( string topic, string title) : base(topic)
+    public WritingAssignment(string studentName, string topic, string title) : base(studentName,topic)
     {
         _title = topic;
         GetSummary();
