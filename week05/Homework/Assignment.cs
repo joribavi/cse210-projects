@@ -5,10 +5,10 @@ public class Assignment
     private string _topic;
 
     //constructor 
-    public Assignment()
+    public Assignment(string studentName, string topic)
     {
-        _studentName = "Oliver Cowdery";
-        _topic = "Book of Mormon";
+        _studentName = studentName;
+        _topic = topic;
     }
     
     //class modules

@@ -5,11 +5,11 @@ public class MathAssignment : Assignment
     public string _problems;
 
     //constructor 
-    public MathAssignment() : base()
+    public MathAssignment(string textBookSection, string problems, string studentName, string topic) : base(studentName, topic) 
     {
 
-        _textBookSection = "Sample Section";
-        _problems = "Math Sample Problems";
+        _textBookSection = textBookSection;
+        _problems = problems;
 
         GetSummary();
 

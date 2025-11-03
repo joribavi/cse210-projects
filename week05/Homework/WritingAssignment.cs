@@ -4,9 +4,9 @@ public class WritingAssignment: Assignment
     public string _title;
 
     //constructor
-    public WritingAssignment() : base()
+    public WritingAssignment( string topic, string title) : base(topic)
     {
-        _title = "Sample Assignment Title";
+        _title = topic;
         GetSummary();
     }
 

@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
 
-        Assignment assignment1 = new Assignment();
+        Assignment assignment1 = new Assignment("Carlos Washington", "Math");
         string summary1 = assignment1.GetSummary();
 
         Console.WriteLine($"{summary1}");
