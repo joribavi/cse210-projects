@@ -26,7 +26,7 @@ class Program
         foreach (Shape shapeListItem in myList)
         {
             double area = shapeListItem.GetArea();
-            Console.WriteLine($"The area of {shapeListItem} is {area}");   
+            Console.WriteLine($"The area of {shapeListItem} is {area}. And the color is {shapeListItem.GetColor()}");   
         }
 
      
