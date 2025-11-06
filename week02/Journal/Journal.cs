@@ -36,10 +36,11 @@ public class Journal
         string myPrompt = entry._myPrompt;
         string myDate = entry._myDate;
         string myEntry = entry._myEntry;
-        
+
         outputFile.WriteLine($"{myDate}");   
+        outputFile.WriteLine($"{myPrompt}");  
         outputFile.WriteLine($"{myEntry}");          
-        outputFile.WriteLine($"{myPrompt}");           
+                 
       }
              
    
