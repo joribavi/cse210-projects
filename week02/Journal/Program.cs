@@ -37,6 +37,10 @@ class Program
         myOptions.Add(option4);
         myOptions.Add(option5);
 
+        //Creating the Journal Object
+        Journal myJournal = new Journal();
+
+
 
         Console.WriteLine("Welcome to the journal program");
 
@@ -58,9 +62,22 @@ class Program
                 switch (optionChosen)
                 {
                     case 1:
+                        string prompt = myPromptGenerator.GetRandomPrompt();
                         string newEntry = Console.ReadLine();
-                        Entry entry1 = new Entry();
+                        
+                        DateTime theCurrentTime = DateTime.Now;
+                        string dateText = theCurrentTime.ToShortDateString();
+                        Entry entry1 = new Entry(newEntry, dateText, prompt);
+                        myJournal.AddEntry(entry1);
                         break;
+
+                    case 2:
+                        break;    
+
+                    case 5:
+                        Console.WriteLine("Thanks for coming!");
+                        keepOn = true;
+                        break;    
                 }
 
    

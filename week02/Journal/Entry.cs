@@ -1,17 +1,17 @@
 public class Entry
 {
-    private string myEntry = "";
-    private string myDate = "";
+    private string _myEntry;
+    private string _myDate ;
 
-    private string myPrompt = "";
+    private string _myPrompt;
 
     public Entry()
     {
-        myEntry = "Sample Entry";
+        _myEntry = "Sample Entry";
 
-        myDate = "10-10-2025";
+        _myDate = "10-10-2025";
 
-        myPrompt = "It was a great day";
+        _myPrompt = "It was a great day";
 
     }
     
@@ -24,9 +24,9 @@ public class Entry
 
     public void DisplaySingleEntry()
     {
-        Console.WriteLine($"{myEntry}");
-        Console.WriteLine($"{myDate}");
-        Console.WriteLine($"{myPrompt}");
+        Console.WriteLine($"{_myEntry}");
+        Console.WriteLine($"{_myDate}");
+        Console.WriteLine($"{_myPrompt}");
 
     }
 

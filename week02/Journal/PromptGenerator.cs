@@ -18,7 +18,7 @@ public class PromptGenerator
 
 
 
-    public void GetRandomPrompt()
+    public string GetRandomPrompt()
     {
         
         _prompts.Add(prompt1);
@@ -27,18 +27,24 @@ public class PromptGenerator
         _prompts.Add(prompt4);
         _prompts.Add(prompt5);
 
+        string randomElement = "";
+
         foreach (string prompt in _prompts)
-        
+
+
         {
             Random randomPrompt = new Random(); // call random method to use it in the next lines 
             int randomIndex = randomPrompt.Next(_prompts.Count);
 
-            string randomElement = _prompts[randomIndex]; //getting a random element of the list , according to its index 
+            randomElement = _prompts[randomIndex]; //getting a random element of the list , according to its index 
 
             Console.WriteLine($"{randomElement}");
-            break; 
 
+            return randomElement;
         }
+
+        return randomElement;
+        
 
     }
 
