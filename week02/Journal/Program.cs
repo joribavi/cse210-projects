@@ -81,6 +81,7 @@ class Program
                         myJournal.SaveToFile(filename);
                         break;
                     case 4:
+                        myJournal.LoadFromFile(filename);
                         break;         
 
                     case 5:

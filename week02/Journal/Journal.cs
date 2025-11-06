@@ -43,10 +43,6 @@ public class Journal
       }
              
    
-     //   string? newEntry; 
-
-    // Adding text to the file with  WriteLine method
-  //  outputFile.WriteLine($"{newEntry}");
     
     }
     
@@ -55,18 +51,19 @@ public class Journal
     }
     
     public void LoadFromFile(string filename)
-    {
+  {
 
        // string filename = "myFile.txt";
-         string[] lines = System.IO.File.ReadAllLines(filename);
+  
+      string[] lines = System.IO.File.ReadAllLines(filename);
 
-      foreach (string line in lines)
-      {
-      string[] parts = line.Split(",");
+    foreach (string line in lines)
+    {
+      string[] parts = line.Split("?", StringSplitOptions.RemoveEmptyEntries); //spliting with delimiter
 
-      string firstName = parts[0];
-      string lastName = parts[1];
-      }
-        
+      Console.WriteLine($"{line}");
+           
+    }
+ 
     }
 }
