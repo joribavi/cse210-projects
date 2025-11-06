@@ -24,9 +24,10 @@ public class Entry
 
     public void DisplaySingleEntry()
     {
-        Console.WriteLine($"{_myEntry}");
+        
         Console.WriteLine($"{_myDate}");
         Console.WriteLine($"{_myPrompt}");
+        Console.WriteLine($"{_myEntry}");
 
     }
 

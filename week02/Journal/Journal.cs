@@ -11,8 +11,13 @@ public class Journal
 
     public void DisplayEntries()
     {
-
-        Console.WriteLine($"{_myEntryList}");
+        foreach (Entry entry in _myEntryList)
+        {
+         entry.DisplaySingleEntry();
+            
+        }
+     
+          
     }
 
     public void SaveToFile(string filename)

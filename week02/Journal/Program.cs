@@ -72,6 +72,7 @@ class Program
                         break;
 
                     case 2:
+                        myJournal.DisplayEntries();
                         break;    
 
                     case 5:
