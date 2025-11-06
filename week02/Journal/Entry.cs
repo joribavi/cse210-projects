@@ -1,9 +1,9 @@
 public class Entry
 {
-    private string _myEntry;
-    private string _myDate ;
+    public string _myEntry;
+    public string _myDate ;
 
-    private string _myPrompt;
+    public string _myPrompt;
 
     public Entry()
     {
@@ -24,11 +24,13 @@ public class Entry
 
     public void DisplaySingleEntry()
     {
-        
+
         Console.WriteLine($"{_myDate}");
         Console.WriteLine($"{_myPrompt}");
         Console.WriteLine($"{_myEntry}");
 
     }
+    
+
 
 }

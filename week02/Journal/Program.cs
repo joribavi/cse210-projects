@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -45,6 +46,7 @@ class Program
         Console.WriteLine("Welcome to the journal program");
 
         bool keepOn = false;
+        string filename = "myFile.txt";
 
         do
         {
@@ -73,7 +75,13 @@ class Program
 
                     case 2:
                         myJournal.DisplayEntries();
-                        break;    
+                        break;
+
+                    case 3:
+                        myJournal.SaveToFile(filename);
+                        break;
+                    case 4:
+                        break;         
 
                     case 5:
                         Console.WriteLine("Thanks for coming!");

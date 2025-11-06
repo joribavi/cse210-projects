@@ -23,13 +23,26 @@ public class Journal
     public void SaveToFile(string filename)
     {
         
-   //filename = 'myJournal
  
 
     using (StreamWriter outputFile = new StreamWriter(filename))
-        {     
-        
+    {
 
+      outputFile.WriteLine("Journal Entries: ");
+      
+     
+      foreach (Entry entry in _myEntryList)
+      {
+        string myPrompt = entry._myPrompt;
+        string myDate = entry._myDate;
+        string myEntry = entry._myEntry;
+        
+        outputFile.WriteLine($"{myDate}");   
+        outputFile.WriteLine($"{myEntry}");          
+        outputFile.WriteLine($"{myPrompt}");           
+      }
+             
+   
      //   string? newEntry; 
 
     // Adding text to the file with  WriteLine method
