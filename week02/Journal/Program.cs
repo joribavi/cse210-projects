@@ -39,49 +39,37 @@ class Program
 
 
         Console.WriteLine("Welcome to the journal program");
-        foreach (Option option in myOptions)
+
+        bool keepOn = false;
+
+        do
         {
-            option.DisplayOptions();
-        }
-
-        string? userResponse = Console.ReadLine(); //trying to fix possible nullable argument 
-
-        if (!string.IsNullOrEmpty(userResponse)) // verifying that the user enters a valid prompt , if not, it will be handled
-        {                                         //this after compiler error 
-            int optionChosen = int.Parse(userResponse);
-
-            if (optionChosen == 1)
+            foreach (Option option in myOptions)
             {
-
-
-            }
-            else if (optionChosen == 2)
-
-            {
-
+                option.DisplayOptions();
             }
 
-            else if (optionChosen == 3)
-            {
+            string userResponse = Console.ReadLine(); 
 
-            }
+             if (!string.IsNullOrEmpty(userResponse)) // verifying that the user enters a valid prompt , if not, it will be handled
+             {                                         //this after compiler error 
+                int optionChosen = int.Parse(userResponse);
 
-            else if (optionChosen == 4)
+                switch (optionChosen)
+                {
+                    case 1:
+                        string newEntry = Console.ReadLine();
+                        Entry entry1 = new Entry();
+                        break;
+                }
 
-            {
+   
+             }
 
-            }
 
-            else if (optionChosen == 5)
-            {
+        } while (!keepOn);
+      
 
-            }
-            else
-            {
-                Console.WriteLine("Please Enter a Valid response");
-            }
-
-        }
      }
 
  }
