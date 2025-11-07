@@ -1,6 +1,11 @@
 using System;
 using System.IO;
+/*
+The program was enhanced by adding a functionality of turning the file in txt to 
+CSV File
 
+
+*/
 
 class Program
 {
