@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 
+
 class Program
 {
     static void Main(string[] args)
@@ -26,7 +27,8 @@ class Program
         Option option2 = new Option("2) Display the Journal");
         Option option3 = new Option("3) Save the Journal to a file");
         Option option4 = new Option("4) Load the Journal from a file");
-        Option option5 = new Option("5) Quit");
+        Option option5 = new Option("5) Turn the File into a CSV file");
+        Option option6 = new Option("6) Quit");
 
         //Adding options to list 
         List<Option> myOptions = new List<Option>();
@@ -37,6 +39,7 @@ class Program
         myOptions.Add(option3);
         myOptions.Add(option4);
         myOptions.Add(option5);
+        myOptions.Add(option6);
 
         //Creating the Journal Object
         Journal myJournal = new Journal();
@@ -54,49 +57,65 @@ class Program
             {
                 option.DisplayOptions();
             }
+            try
+            {
 
-            string userResponse = Console.ReadLine(); 
+                string userResponse = Console.ReadLine();
 
-             if (!string.IsNullOrEmpty(userResponse)) // verifying that the user enters a valid prompt , if not, it will be handled
-             {                                         //this after compiler error 
-                int optionChosen = int.Parse(userResponse);
+                if (!string.IsNullOrEmpty(userResponse)) // verifying that the user enters a valid prompt , if not, it will be handled
+                {                                         //this after compiler error 
+                    int optionChosen = int.Parse(userResponse);
 
-                switch (optionChosen)
-                {
-                    case 1:
-                        string prompt = myPromptGenerator.GetRandomPrompt();
-                        string newEntry = Console.ReadLine();
-                        
-                        DateTime theCurrentTime = DateTime.Now;
-                        string dateText = theCurrentTime.ToShortDateString();
-                        Entry entry1 = new Entry(newEntry, dateText, prompt);
-                        myJournal.AddEntry(entry1);
-                        break;
+                    switch (optionChosen)
+                    {
+                        case 1:
+                            string prompt = myPromptGenerator.GetRandomPrompt();
+                            string newEntry = Console.ReadLine();
 
-                    case 2:
-                        myJournal.DisplayEntries();
-                        break;
+                            DateTime theCurrentTime = DateTime.Now;
+                            string dateText = theCurrentTime.ToShortDateString();
+                            Entry entry1 = new Entry(newEntry, dateText, prompt);
+                            myJournal.AddEntry(entry1);
+                            break;
 
-                    case 3:
-                        myJournal.SaveToFile(filename);
-                        break;
-                    case 4:
-                        myJournal.LoadFromFile(filename);
-                        break;         
+                        case 2:
+                            myJournal.DisplayEntries();
+                            break;
 
-                    case 5:
-                        Console.WriteLine("Thanks for coming!");
-                        keepOn = true;
-                        break;    
+                        case 3:
+                            myJournal.SaveToFile(filename);
+                            break;
+                        case 4:
+                            myJournal.LoadFromFile(filename);
+                            break;
+
+                        case 5:
+                            myJournal.toCSV(filename);
+                            break; 
+
+                        case 6:
+                            Console.WriteLine("Thanks for coming!");
+                            keepOn = true;
+                            break;
+                             
+                        default:
+                            Console.WriteLine("Please enter a valid value between 1 and 6");
+                            break;
+
+                    }
+
+
                 }
 
-   
-             }
+                } catch(FormatException) 
+         {
+            Console.WriteLine("Please Enter a valid value between 1 and 6");
+        }
 
 
-        } while (!keepOn);
-      
+            } while (!keepOn) ;
 
+        
      }
 
  }

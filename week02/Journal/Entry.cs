@@ -25,9 +25,9 @@ public class Entry
     public void DisplaySingleEntry()
     {
 
-        Console.WriteLine($"{_myDate}");
-        Console.WriteLine($"{_myPrompt}");
-        Console.WriteLine($"{_myEntry}");
+        Console.WriteLine($"Date: {_myDate}");
+        Console.WriteLine($"Prompt: {_myPrompt}");
+        Console.WriteLine($"Entry: {_myEntry}");
 
     }
     
