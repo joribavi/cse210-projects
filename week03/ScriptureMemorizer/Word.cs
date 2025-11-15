@@ -11,9 +11,7 @@ public class Word
 
     public void HideWord()
     {
-        Console.Clear();
-        _text = "_";
-        Console.WriteLine(_text);
+        _isHiden = true;
     }  
 
     public void ShowWord()
@@ -23,20 +21,21 @@ public class Word
 
     public bool IsHidden()
     {
-        if (_text == "_")
-        {
-             _isHiden = true; 
-        }
-        else
-        {
-            _isHiden = false; 
-        }
+            
         return _isHiden;
     }
 
     public string GetDisplayText()
     {
-        
-        return _text;
+        string hiddenWord = "_";
+
+        if (_isHiden == true)
+        {
+            return hiddenWord;
+        }
+        else 
+        {
+            return _text;
+        }
     }
 }

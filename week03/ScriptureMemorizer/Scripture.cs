@@ -35,19 +35,39 @@ public class Scripture
     }
 
 
-    public void HideRandWords(int numberToHide)
+    public void HideRandWords(int numberToHide) //number to hide is the number of Words element we want to hide at once
     {
      
-        Random hideWords = new Random();
-        int randomIndex = numberToHide;
-
-        foreach (Word word in _words)
+       int amountOfWords = _words.Count(); //counting amount of elements of type Word
+        
+       if (amountOfWords>= numberToHide) //verifies that we will not hide a bigger number than number to Hide
         {
-            Console.Clear();
-            Console.WriteLine("_");
-            
-        }
 
+            Random randNum = new Random();
+
+            for (int i= 0; i < numberToHide; i++)
+            {
+            
+               int randIndex = randNum.Next(amountOfWords); //getting a random number smaller than the current text
+
+               
+                 _words[randIndex].HideWord();
+                
+
+                 _words[randIndex].GetDisplayText();
+                
+
+            }
+              
+           
+
+
+        } 
+        else
+        {
+            Console.WriteLine("The list is empty...");
+        }
+      
     }
 
 
@@ -71,7 +91,15 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-      return true;   
+      foreach (Word word in _words)
+        {
+            if(word.IsHidden() == false)
+            {
+                return false;
+            }
+       
+        }  
+        return true;
     
     }
 }

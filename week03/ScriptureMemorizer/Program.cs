@@ -11,9 +11,11 @@ class Program
 
         Reference myReference = new Reference("1 Nephi",3,7);
         Scripture myScripture = new Scripture(myReference,text);
-
-        Console.WriteLine(myReference.GetDisplayText());
-        Console.WriteLine(myScripture.GetDisplayText());
+        string reference = myReference.GetDisplayText();
+        string scripture = myScripture.GetDisplayText();
+        do {
+        Console.WriteLine(reference);
+        Console.WriteLine(scripture);
         
         Console.WriteLine("Hit enter key to continue, type quit to end");
         string response = Console.ReadLine();
@@ -23,63 +25,32 @@ class Program
             return;
         }
 
+        else if (response == "")
+      
+        {
+
+            myScripture.HideRandWords(5);
+            Console.Clear();
+            scripture = myScripture.GetDisplayText();
+    
+
+        }
+
         else
         {
-            myScripture.HideRandWords(4);
-            
+            Console.WriteLine("Please Enter a valid answer");
         }
 
      
 
+        } while (myScripture.IsCompletelyHidden()==false);
 
 
 
 
 
-
-      /*
-        foreach (string singleWord in wholeText)
-        {
-            Word word = new Word(singleWord);
-         //   word.ShowWord(); 
-              word.HideWord();
-            
-
-        } 
-        */
-
-
-
-        /*
-
-         Reference myReference = new Reference("1Nephi",3,7);
-
-         Scripture myScripture = new Scripture(myReference, text); 
-  
-
-        string response = Console.ReadLine();    
-        do
-        {
-        myScripture.GetDisplayText();
-        Console.WriteLine("Type quit if you want to stop"); 
-
-            
-        } while (response != "quit");
-
-        */
+     
     }
 
-    /* 
-    When user types quit program ends
-    
-    HiderClass
 
-    Display Class
-
-    RandomScripture
-
-    Mentor Guidance 
-  
-    
-    */
 }
