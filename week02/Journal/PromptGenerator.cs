@@ -30,7 +30,7 @@ public class PromptGenerator
         string randomElement = "";
 
         foreach (string prompt in _prompts)
-
+        
 
         {
             Random randomPrompt = new Random(); // call random method to use it in the next lines 

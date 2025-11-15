@@ -6,18 +6,24 @@ class Program
     {
 
 
+
         string text = "And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them.";
         
 
         Reference myReference = new Reference("1 Nephi",3,7);
         Scripture myScripture = new Scripture(myReference,text);
+       
+   
+       
+        
         string reference = myReference.GetDisplayText();
         string scripture = myScripture.GetDisplayText();
         do {
         Console.WriteLine(reference);
         Console.WriteLine(scripture);
-        
-        Console.WriteLine("Hit enter key to continue, type quit to end");
+        Console.WriteLine("");
+
+        Console.WriteLine("Hit enter key to continue, type 'quit' to finish");
         string response = Console.ReadLine();
 
         if (response == "quit")
@@ -29,8 +35,12 @@ class Program
       
         {
 
-            myScripture.HideRandWords(5);
-            Console.Clear();
+      
+
+
+         
+        myScripture.HideRandWords(5);
+            Console.Clear(); //it clears the console before showing the modified scripture String
             scripture = myScripture.GetDisplayText();
     
 
@@ -51,6 +61,7 @@ class Program
 
      
     }
+
 
 
 }

@@ -6,7 +6,10 @@ public class Scripture
     private List<Word>_words; 
 
    
-
+    public Scripture ()
+    {
+        
+    }
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
