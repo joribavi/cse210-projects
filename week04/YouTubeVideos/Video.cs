@@ -23,11 +23,13 @@ public class Video
     public int GetNumComments()
     {
         int NumOfComments = 0;
-        foreach (Comment myComment in _videoComments)
+        for (NumOfComments = 0; NumOfComments < _videoComments.Count(); NumOfComments++)
         {
-          NumOfComments = _videoComments.Count();
-
+            NumOfComments += NumOfComments;
+            Console.WriteLine(_videoComments[NumOfComments]);
         }
+
+     
         return NumOfComments;
     }
 
@@ -57,9 +59,10 @@ public class Video
 
         }
 
-        return textContent;
-                   
 
+
+        return textContent;
+    
 
     }
 }
