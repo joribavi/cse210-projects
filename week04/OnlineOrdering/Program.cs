@@ -10,7 +10,8 @@ class Program
 
     /*  PROGRAM SPECIFICATION 
 Program Specification
-Write a program that has classes for Product, Customer, Address, and Order. The responsibilities of these classes are as follows:
+Write a program that has classes for Product, Customer, Address, and Order.
+The responsibilities of these classes are as follows:
 
 Order
 Contains a list of products and a customer. Can calculate the total cost of the order. Can return a string for the packing label. Can return a string for the shipping label.
