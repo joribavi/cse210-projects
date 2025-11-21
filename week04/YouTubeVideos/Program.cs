@@ -73,18 +73,26 @@ class Program
         myVideoList.Add(video3);   
         myVideoList.Add(video4);
 
+
+        
         //ITERATION OVER ALL VIDEOS- EACH ONE WITH ITS COMMENT 
+        
+   
+       
 
         foreach (Video myVideo in myVideoList)
         {
+       
             Console.WriteLine("*********************");
             myVideo.GetDisplayContent();
             //GETTING AMOUNT OF COMMENTS
-            myVideo.GetNumComments();
-            int amountComments = myVideo.GetNumComments();
-            Console.WriteLine($"Number of Comments: {amountComments}");
+             myVideo.GetNumComments();
+             int numOfComments = myVideo.GetNumComments();
+            Console.WriteLine($"Number of Comments: {numOfComments}");
             Console.WriteLine("Comments: ");
-            Console.WriteLine($"{myVideo.DisplayListContent()}");
+            myVideo.DisplayListContent();
+     
+            
             Console.WriteLine("*********************");
 
             
@@ -97,31 +105,3 @@ class Program
 }
 
 
-/* 
-What does the program do?
-keep track of YouTube videos and comments left on them
-What are candidates for classes?
-1)Video Class
-2)Comment Class
-
-What are the responsibilities of each class?
-1)Video Class :
-it tracks the title, author, and length (in seconds) of the video.
-Each video also has responsibility to store a list of comments, and 
-should have a method to return the number of comments
-2)Comment Class:
-it tracks both the name of the person who made the comment and the text of the comment.
-
-
-Once you have the classes in place, write a program that creates 3-4 videos (PROGRAM.CS ON THE MAIN FUNCTION)
-sets the appropriate values, and for each one add a list of 3-4 comments 
-(with the commenter's name and text). Put each of these videos in a list.
-
-Then, have your program iterate through the list of videos and for each one, 
-display the title, author, length, number of comments (from the method) and 
-then list out all of the comments for that video. Repeat this display for each video in the list.
-
-NO USER INTERACTION IS REQUIRED FOR THE PROGRAM
-
-
-*/

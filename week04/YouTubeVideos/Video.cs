@@ -8,7 +8,7 @@ public class Video
 
     private int _seconds;
 
-    private List <Comment> _videoComments;
+    private List <Comment> _videoComments = new();
 
     //Constructor
     public Video(string title, string author, int seconds)
@@ -22,14 +22,11 @@ public class Video
     //Behaviors or methods
     public int GetNumComments()
     {
-        int NumOfComments = 0;
-        for (NumOfComments = 0; NumOfComments < _videoComments.Count(); NumOfComments++)
-        {
-            NumOfComments += NumOfComments;
-            Console.WriteLine(_videoComments[NumOfComments]);
-        }
+      
+       
+         int NumOfComments = _videoComments.Count;   
 
-     
+      
         return NumOfComments;
     }
 
@@ -44,24 +41,26 @@ public class Video
     //Adding Comments to the list
     public void AddComments(Comment newComment)
     {
-        _videoComments = new(); //initializing the list
+    
         _videoComments.Add(newComment);
 
     }
 
-    public string DisplayListContent()
+    public void DisplayListContent() //turning to void after debug //change made in the Program Design
     {
-        string textContent = "";
-        foreach(Comment myComment in _videoComments)
+
+
+         foreach(Comment myComment in _videoComments)
         {
-            textContent = myComment.GetDisplayContent();
-            
+          string  textContent = myComment.GetDisplayContent();
+          Console.WriteLine($"{textContent}");  
 
         }
 
 
 
-        return textContent;
+
+
     
 
     }
