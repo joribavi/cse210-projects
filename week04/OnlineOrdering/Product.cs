@@ -24,5 +24,19 @@ public class Product
 
 
     }
+
+    //Getters 
+
+    public string GetProductName()
+    {
+        
+        return _productName;
+    }
+
+     public string GetProductID()
+    {
+        
+        return _productID;
+    }
     
 }

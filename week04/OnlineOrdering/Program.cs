@@ -3,37 +3,89 @@ using System;
 class Program
 {
     static void Main(string[] args)
+
     {
-        Console.WriteLine("Hello World! This is the OnlineOrdering Project.");
+         //CREATING ADDRESSESS (AFTER THAT ASSOCIATING THEM TO THE CUSTOMERS)   
+        Address addressClient1 = new("Miami st 500", "Miami", "Florida", "United States");
+        Address addressClient2 = new("Brown st 55", "Washingtong DC", "Columbia", "USA");
+        Address addressClient3 = new("San Julian st 1204", "Cancun", "Yucatán", "Mexico");
+
+
+        //CREATING CUSTOMERS TO GET THE SHIPPING LABEL INFORMATION
+
+        Customer customer1 = new("John Doe", addressClient1);
+        Customer customer2 = new("Julia Doe", addressClient2);
+        Customer customer3 = new("Juan Ramirez", addressClient3);
+        
+
+
+        //PROGRAM CREATES PRODUCTS 
+        Product product1 = new("Soap", "AH34566", 30, 5);
+        Product product2 = new("Shampoo", "AH34500", 10, 3);
+        Product product3 = new("Comb", "AH11116", 5, 10);
+        Product product4 = new("Toothpaste", "AH3006", 2, 20);   
+        Product product5 = new("Toothbrush", "AH01D66", 1, 10);      
+
+        //CREATING PRODUCT LISTS FOR EACH ORDER
+        List<Product>order1ProductList = new();
+        order1ProductList.Add(product1);
+        order1ProductList.Add(product2);
+        order1ProductList.Add(product3);
+
+        List<Product>order2ProductList = new();
+        order2ProductList.Add(product1);
+        order2ProductList.Add(product4);
+        order2ProductList.Add(product5);
+
+        List<Product>order3ProductList = new();
+        order3ProductList.Add(product3);
+        order3ProductList.Add(product1);
+        order3ProductList.Add(product5);
+
+        
+        
+
+        //PROGRAM CREATES 3 NEW ORDERS
+        Order order1 = new(customer1,order1ProductList);
+        Order order2 = new(customer2,order2ProductList);
+        Order order3 = new(customer3,order3ProductList);
+
+        //ADDING ORDERS TO AN ORDER LIST TO ITERATE IN THE NEXT STEP OF THE PROGRAM
+        List<Order>myOrderList = new();
+        myOrderList.Add(order1);
+        myOrderList.Add(order2);
+        myOrderList.Add(order3); 
+
+
+        //DISPLAY PACKING LABEL, SHIPPING LABEL , TOTAL PRICE PER ORDER
+        Console.WriteLine("****************");
+        foreach (Order myOrder in myOrderList)
+        {
+           myOrder.GetShippingLabel();
+           myOrder.GetPackingLabel();
+           
+           myOrder.GetTotalCost();
+           Console.WriteLine("***************"); 
+
+
+
+        }    
+
+
+        
+
+
+        
     }
 
 
     /*  PROGRAM SPECIFICATION 
-Program Specification
-Write a program that has classes for Product, Customer, Address, and Order.
-The responsibilities of these classes are as follows:
+P
 
-Order
-Contains a list of products and a customer. Can calculate the total cost of the order. Can return a string for the packing label. Can return a string for the shipping label.
-The total price is calculated as the sum of the total cost of each product plus a one-time shipping cost.
-This company is based in the USA. If the customer lives in the USA, then the shipping cost is $5. If the customer does not live in the USA, then the shipping cost is $35.
-A packing label should list the name and product id of each product in the order.
-A shipping label should list the name and address of the customer
-Product
-Contains the name, product id, price, and quantity of each product.
-The total cost of this product is computed by multiplying the price per unit and the quantity. (If the price per unit was $3 and they bought 5 of them, the product total cost would be $15.)
-Customer
-The customer contains a name and an address.
-The name is a string, but the Address is a class.
-The customer should have a method that can return whether they live in the USA or not. (Hint this should call a method on the address to find this.)
-Address
-The address contains a string for the street address, the city, state/province, and country.
-The address should have a method that can return whether it is in the USA or not.
-The address should have a method to return a string all of its fields together in one string (with newline characters where appropriate)
-Other considerations
-Make sure that all member variables are private and getters, setters, and constructors are created as needed.
 
-Once you have created these classes, write a program that creates at least two orders with a 2-3 products each. Call the methods to get the packing label, the shipping label, and the total price of the order, and display the results of these methods.
+ write a program that creates at least two orders with a 2-3 products each.
+  Call the methods to get the packing label, the shipping label, and the total price of the order, 
+  and display the results of these methods.
 
      */
 }

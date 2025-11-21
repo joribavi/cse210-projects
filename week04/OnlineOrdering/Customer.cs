@@ -23,4 +23,16 @@ public class Customer
         return true;
     }
 
+    //getters
+
+    public string GetCustomerName()
+    {
+        return _name;
+    }
+
+    public Address GetCustomerAddress()
+    {
+        return _myAddress;
+    }
+
 }
