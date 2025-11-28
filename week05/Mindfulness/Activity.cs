@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 class Activity
 {
     private string _name;
@@ -6,7 +8,7 @@ class Activity
     private int _duration;
 
 
-    protected Activity (string name, string description, int duration)
+    public Activity (string name, string description, int duration)
     {
         _name = name;
         _description = description;
@@ -23,16 +25,50 @@ class Activity
 
     public void DisplayEndingMessage()
     {
-        
+        Console.WriteLine("Well done! ");
     }
      public void ShowSpinner(int seconds)
     {
-        
+      List<string> animationStrings = new();
+      animationStrings.Add("|");  
+      animationStrings.Add("/"); 
+      animationStrings.Add("-"); 
+      animationStrings.Add("\\"); 
+      animationStrings.Add("|"); 
+      animationStrings.Add("/"); 
+      animationStrings.Add("-"); 
+      animationStrings.Add("\\"); 
+
+      DateTime startTime = DateTime.Now;
+      DateTime endTime = startTime.AddSeconds(seconds);
+
+      int startingIndex = 0;
+
+        while (DateTime.Now < endTime)
+        {
+            string s = animationStrings[startingIndex];
+            Console.Write(s);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+            startingIndex++; 
+
+            if(startingIndex >= animationStrings.Count)
+            {
+                startingIndex = 0;
+            }
+
+        }
+    
     }
 
      public void ShowCountDown(int seconds)
     {
-        
+        for (int counter = seconds; counter > 0 ; counter-- )
+        {
+            Console.Write(counter);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
     }
 
 

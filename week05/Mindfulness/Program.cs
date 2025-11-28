@@ -20,6 +20,9 @@ class Program
           if (optionChosen == "1")
             {
             Console.WriteLine("You chose option 1");
+            Activity sample = new("sample", "description",30); 
+          //  sample.ShowSpinner(30);
+            sample.ShowCountDown(7);
             }
           else if (optionChosen == "2")
             {
