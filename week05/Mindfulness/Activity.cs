@@ -15,7 +15,10 @@ class Activity
 
     public void DisplayStartingMessage()
     {
-        
+        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        Console.ReadLine();
+        Console.WriteLine("Get ready...");
+
     }
 
     public void DisplayEndingMessage()
