@@ -24,7 +24,8 @@ class Program
             }
           else if (optionChosen == "2")
             {
-            Console.WriteLine("You chose option 2"); 
+            ReflectionActivity.Run();  
+            
             }
           else if (optionChosen == "3")
             {

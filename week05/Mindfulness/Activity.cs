@@ -19,6 +19,10 @@ class Activity
     {
 
         Console.WriteLine($"Welcome to the {_name} Activity");
+        Console.WriteLine($"{_description}"); 
+        Console.WriteLine("");
+        Console.Write("How long, in seconds, would you like for your session? ");  
+       
        
 
     }

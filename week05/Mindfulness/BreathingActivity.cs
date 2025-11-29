@@ -11,14 +11,14 @@ class BreathingActivity : Activity
     public static void Run()
     {
       int duration = 0;   //initial default value
-      string description = ""; //default value
+      string description =  "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+
       BreathingActivity myBreathingActivity = new("Breathing", description, duration);  
+
       myBreathingActivity.DisplayStartingMessage();
-      Console.WriteLine("");
-      description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
-      Console.WriteLine(description);   
-      Console.WriteLine(""); 
-      Console.Write("How long, in seconds, would you like for your session? ");
+     
+      
+   
       string durationString = Console.ReadLine();
       duration = int.Parse(durationString);
       myBreathingActivity.SetDuration(duration);
@@ -31,7 +31,6 @@ class BreathingActivity : Activity
       Console.WriteLine("");    
 
      
-      //Do loop to correct (infinite loop) 
       DateTime startTime = DateTime.Now;
       DateTime endTime = startTime.AddSeconds(duration);
  
@@ -79,7 +78,7 @@ class BreathingActivity : Activity
         myBreathingActivity.DisplayEndingMessage();
 
         myBreathingActivity.ShowSpinner(5);
-        Console.WriteLine(""); 
+        Console.Clear();
      
     
 
