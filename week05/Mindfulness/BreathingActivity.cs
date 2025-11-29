@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 class BreathingActivity : Activity
 {
     
@@ -23,10 +25,26 @@ class BreathingActivity : Activity
       Console.WriteLine("Get ready...");  
       myBreathingActivity.ShowSpinner(10);
 
-      Console.WriteLine("Breathe in... "); 
-      Console.WriteLine("Now breathe out... ");   
+      int firstNum = 2;
+      int secondNum = 4;
+       
+      //Do loop to correct (infinite loop) 
+      int sumCountDown = firstNum + secondNum;
+      do      
+        {
+        Console.Write("Breathe in... ");
+        myBreathingActivity.ShowCountDown(firstNum); 
+        Console.Write("Now breathe out... ");   
+        myBreathingActivity.ShowCountDown(secondNum); 
 
-      
+        } while(sumCountDown < duration);
+
+        myBreathingActivity.DisplayEndingMessage();
+        myBreathingActivity.ShowSpinner(5);
+
+        
+   
+
 
    
    
