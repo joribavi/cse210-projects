@@ -15,11 +15,11 @@ class Activity
         _duration = duration;
     }
 
-    public void DisplayStartingMessage()
+    public  void DisplayStartingMessage()
     {
-        Console.WriteLine("How long, in seconds, would you like for your session? ");
-        Console.ReadLine();
-        Console.WriteLine("Get ready...");
+
+        Console.WriteLine($"Welcome to the {_name} activity");
+       
 
     }
 
@@ -69,6 +69,21 @@ class Activity
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
+    }
+
+    public void SetName(string name)
+    {
+        _name = name;
+    }
+
+    public void SetDuration(int duration)
+    {
+        _duration = duration;
+    }
+
+    public void SetDescription(string description)
+    {
+        _description = description;
     }
 
 
