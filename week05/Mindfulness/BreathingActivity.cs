@@ -12,35 +12,76 @@ class BreathingActivity : Activity
     {
       int duration = 0;   //initial default value
       string description = ""; //default value
-      BreathingActivity myBreathingActivity = new("Breathing Activity", description, duration);  
+      BreathingActivity myBreathingActivity = new("Breathing", description, duration);  
       myBreathingActivity.DisplayStartingMessage();
-      
+      Console.WriteLine("");
       description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
-      Console.WriteLine(description);    
+      Console.WriteLine(description);   
+      Console.WriteLine(""); 
       Console.Write("How long, in seconds, would you like for your session? ");
       string durationString = Console.ReadLine();
       duration = int.Parse(durationString);
       myBreathingActivity.SetDuration(duration);
+      Console.Clear();
   
       Console.WriteLine("Get ready...");  
-      myBreathingActivity.ShowSpinner(10);
+      myBreathingActivity.ShowSpinner(5);
+      Console.WriteLine("");
+      Console.WriteLine(""); 
+      Console.WriteLine("");    
 
-      int firstNum = 2;
-      int secondNum = 4;
-       
+     
       //Do loop to correct (infinite loop) 
-      int sumCountDown = firstNum + secondNum;
-      do      
+      DateTime startTime = DateTime.Now;
+      DateTime endTime = startTime.AddSeconds(duration);
+ 
+      if(duration%2 == 0)
         {
-        Console.Write("Breathe in... ");
-        myBreathingActivity.ShowCountDown(firstNum); 
-        Console.Write("Now breathe out... ");   
-        myBreathingActivity.ShowCountDown(secondNum); 
+            
+          while (DateTime.Now < endTime)
+          {
+       
+          Console.Write("Breathe in...");
+          myBreathingActivity.ShowCountDown(4); 
+          Console.WriteLine("");    
 
-        } while(sumCountDown < duration);
+        
+          Console.Write("Now breathe out...");   
+          myBreathingActivity.ShowCountDown(6); 
+           Console.WriteLine("");
+           Console.WriteLine(""); 
+          } 
+        }
+        
+        else
+        {
+          while (DateTime.Now < endTime)
+          {
+          Console.Write($"Breathe in...");
+             
+          myBreathingActivity.ShowCountDown(3); 
+          Console.WriteLine("");    
+
+          
+          Console.Write("Now breathe out...");   
+          myBreathingActivity.ShowCountDown(2); 
+          Console.WriteLine("");  
+          Console.WriteLine("");  
+        
+
+          }
+
+ 
+
+        }
+        string activityName = myBreathingActivity.GetName();
 
         myBreathingActivity.DisplayEndingMessage();
+
         myBreathingActivity.ShowSpinner(5);
+        Console.WriteLine(""); 
+     
+    
 
         
    

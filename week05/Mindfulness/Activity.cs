@@ -18,7 +18,7 @@ class Activity
     public  void DisplayStartingMessage()
     {
 
-        Console.WriteLine($"Welcome to the {_name} activity");
+        Console.WriteLine($"Welcome to the {_name} Activity");
        
 
     }
@@ -26,6 +26,8 @@ class Activity
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done! ");
+        Console.WriteLine($"You have completed another {_duration} seconds of {_name} Activity");   
+      
     }
      public void ShowSpinner(int seconds)
     {
@@ -86,6 +88,10 @@ class Activity
         _description = description;
     }
 
+    public string GetName()
+    {
+        return _name;
+    }
 
 
 
