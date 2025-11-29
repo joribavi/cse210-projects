@@ -1,9 +1,9 @@
 class ReflectionActivity : Activity
 {
 
-     private List<string>_prompts;
+     private List<string>_prompts = new List<string>();
 
-     private List<string>_questions;
+     private List<string>_questions = new List<string>();
      private ReflectionActivity(string name, string description, int duration) : base(name, description, duration)
     {
         name = "Breathing Activity";
@@ -21,19 +21,39 @@ class ReflectionActivity : Activity
       duration = int.Parse(durationString);
       myReflectingActivity.SetDuration(duration);
       Console.Clear();
-       
-      DateTime startTime = DateTime.Now;
-      DateTime endTime = startTime.AddSeconds(duration);
-       while (DateTime.Now < endTime)
+      myReflectingActivity.DisplayPrompt(); 
+      string response = Console.ReadLine();
+
+      if (response == "")
         {
-            Console.WriteLine("here comes the prompts");
+         Console.WriteLine("Now ponder on each of the following questions as they related to this experience");
+         Console.Write("You may begin in: ");   
+         myReflectingActivity.ShowCountDown(5);
+         DateTime startTime = DateTime.Now;
+         DateTime endTime = startTime.AddSeconds(duration);
+         while (DateTime.Now < endTime)
+        {
+             myReflectingActivity.DisplayQuestions();
+             myReflectingActivity.ShowSpinner(5);
         }
 
-
+      Console.WriteLine("");
+      
       myReflectingActivity.DisplayEndingMessage();
 
       myReflectingActivity.ShowSpinner(5);
       Console.Clear();
+
+     
+
+
+
+        }
+      else
+        {
+            Console.WriteLine("That is not a valid value. Please hits enter to continue");
+        }  
+
 
 
     }
@@ -112,14 +132,24 @@ class ReflectionActivity : Activity
 
     public void DisplayPrompt()
     {
+        string randomPrompt = GetRandomPrompt();
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine("");
-        Console.WriteLine($"--- ---");
+        Console.WriteLine($"---{randomPrompt} ---");
+        Console.WriteLine("");
+        Console.WriteLine("When you have somthing in mind press enter to continue.");
+
 
     }
 
     public void DisplayQuestions()
     {
+        string randomQuestion = GetRandomQuestion();
+        Console.WriteLine($">{randomQuestion}"); 
+
+
+        
+
         
     }
     
