@@ -6,7 +6,7 @@ class ReflectionActivity : Activity
      private List<string>_questions = new List<string>();
      private ReflectionActivity(string name, string description, int duration) : base(name, description, duration)
     {
-        name = "Breathing Activity";
+        
     }
 
      public static void Run()
@@ -21,6 +21,8 @@ class ReflectionActivity : Activity
       duration = int.Parse(durationString);
       myReflectingActivity.SetDuration(duration);
       Console.Clear();
+      Console.WriteLine("Get ready...");  
+      myReflectingActivity.ShowSpinner(5);
       myReflectingActivity.DisplayPrompt(); 
       string response = Console.ReadLine();
 
@@ -29,6 +31,8 @@ class ReflectionActivity : Activity
          Console.WriteLine("Now ponder on each of the following questions as they related to this experience");
          Console.Write("You may begin in: ");   
          myReflectingActivity.ShowCountDown(5);
+         Console.WriteLine("");
+         Console.WriteLine("");
          DateTime startTime = DateTime.Now;
          DateTime endTime = startTime.AddSeconds(duration);
          while (DateTime.Now < endTime)

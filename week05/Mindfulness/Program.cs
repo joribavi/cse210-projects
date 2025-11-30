@@ -29,11 +29,11 @@ class Program
             }
           else if (optionChosen == "3")
             {
-            Console.WriteLine("You chose option 3");   
+            ListingActivity.Run();
             }
            else if (optionChosen == "4")
             {
-            Console.WriteLine("You chose option 4");    
+            Console.WriteLine("Thanks for coming!");    
             break;
             }
           
