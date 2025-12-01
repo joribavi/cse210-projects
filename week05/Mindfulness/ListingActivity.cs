@@ -34,11 +34,12 @@ class ListingActivity : Activity
       DateTime startTime = DateTime.Now;
       DateTime endTime = startTime.AddSeconds(duration);
       int numOfPrompts = 0;
-     
+       
       while (DateTime.Now < endTime)
       {
-            
-            numOfPrompts +=  myListingActivity.GetNumOfPrompts();
+
+            myListingActivity.GetListFromUser();  
+            numOfPrompts =  myListingActivity.GetNumOfPrompts();
            
             
       }  
