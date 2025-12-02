@@ -12,6 +12,8 @@ class Program
           Console.WriteLine("   2.Start reflecting activity");
           Console.WriteLine("   3.Start listing activity");
           Console.WriteLine("   4.Quit");
+
+
           Console.WriteLine("Select a Choice from the menu: ");
 
           string optionChosen = Console.ReadLine();  
@@ -31,6 +33,8 @@ class Program
             {
             ListingActivity.Run();
             }
+
+        
            else if (optionChosen == "4")
             {
             Console.WriteLine("Thanks for coming!");    

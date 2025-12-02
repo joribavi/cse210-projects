@@ -96,7 +96,7 @@ class ListingActivity : Activity
         Console.WriteLine($"--- {randomPrompt} ---");
 
     }
-     List <string> userPrompts = new ();  //code to check 
+     List <string> userPrompts = new ();  
     public  List<string> GetListFromUser()
     {
       
@@ -113,7 +113,7 @@ class ListingActivity : Activity
 
     }
 
-    public int GetNumOfPrompts()
+    public  int GetNumOfPrompts()
     {
         
         
@@ -121,5 +121,10 @@ class ListingActivity : Activity
 
         return _count;
     }
+    
+
+
+
+
     
 }

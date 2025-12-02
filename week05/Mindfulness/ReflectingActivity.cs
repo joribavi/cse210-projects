@@ -141,7 +141,7 @@ class ReflectionActivity : Activity
         Console.WriteLine("");
         Console.WriteLine($"---{randomPrompt} ---");
         Console.WriteLine("");
-        Console.WriteLine("When you have somthing in mind press enter to continue.");
+        Console.WriteLine("When you have something in mind press enter to continue.");
 
 
     }
