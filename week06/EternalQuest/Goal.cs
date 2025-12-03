@@ -17,26 +17,26 @@ public class Goal
     }
 
 
-    public void RecordEvent()
+    public virtual void RecordEvent()
     {
         
     }
 
 
-    public bool IsCompleted()
+    public virtual bool IsCompleted()
     {
         return true;
 
     }
 
-    public string GetDetailsString()
+    public virtual string GetDetailsString()
     {
         string sample = "";
         return sample;
 
     }
 
-    public string GetStringRepresentation()
+    public virtual string GetStringRepresentation()
     {
       string representation = "";
       return representation;
