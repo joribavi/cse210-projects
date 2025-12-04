@@ -40,7 +40,7 @@ public  class GoalManager
             
           else if (optionChosen == "2")
             {
-             Console.WriteLine("You chose option 2");
+               ListGoalNames();
             
             }
           else if (optionChosen == "3")
@@ -77,7 +77,13 @@ public  class GoalManager
 
     public void ListGoalNames()
     {
-        
+        Console.WriteLine("The goals are: ");
+        foreach (Goal goal in _goals)
+        {
+            string goalDetails = goal.GetDetailsString();
+            Console.WriteLine(goalDetails);
+        }
+
     }
 
     public void CreateGoal()
@@ -119,9 +125,11 @@ public  class GoalManager
                     break; 
                     case 2:
                     Console.WriteLine("option 2");
+                    keepOnMenu = false;  
                     break;
                     case 3:
                     Console.WriteLine("Option 3");
+                    keepOnMenu = false;  
                     break;
 
                     default:
