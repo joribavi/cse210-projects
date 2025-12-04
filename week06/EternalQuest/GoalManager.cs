@@ -82,14 +82,18 @@ public  class GoalManager
 
     public void CreateGoal()
     {
-         while(true)
-          {
+        bool keepOnMenu = true;
+        while(keepOnMenu) {
             Console.WriteLine("");
             Console.WriteLine("Select a choice from the menu: ");
             Console.WriteLine("The types of Goals are:  ");
             Console.WriteLine("1. Simple Goal");
             Console.WriteLine("2. Eternal Goal ");
             Console.WriteLine("3. Checklist Goal ");
+
+            try
+        {
+                    
             Console.Write("Which type of goal would you like to create? ");
 
             string submenuOption = Console.ReadLine();
@@ -106,8 +110,9 @@ public  class GoalManager
                       string simpleGoalPointsString = Console.ReadLine();
                       int simpleGoalPoints = int.Parse(simpleGoalPointsString);
                       SimpleGoal simpleGoal = new(simpleGoalName,simpleGoalDescription,simpleGoalPoints);
-                      
-                        
+                      _goals.Add(simpleGoal);
+                      keepOnMenu = false;  
+
                       
 
 
@@ -125,12 +130,17 @@ public  class GoalManager
                     break;
 
 
-                }
+              
 
           
       
+               }
+        }  
+               catch (FormatException)
+        {
+            Console.WriteLine("Please enter a valid value");
         }
-        
+        }
     }
 
     public void SaveGoals()
