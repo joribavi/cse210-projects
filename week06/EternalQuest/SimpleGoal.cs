@@ -13,6 +13,16 @@ public class SimpleGoal : Goal
         
     }
 
+    public override bool IsComplete()
+    {
+       return true;
+    }
 
+     public override string GetStringRepresentation()
+    {
+      string representation = "";
+      return representation;
+
+    }
 
 }

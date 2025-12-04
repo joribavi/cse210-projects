@@ -23,7 +23,7 @@ public class Goal
     }
 
 
-    public virtual bool IsCompleted()
+    public virtual bool IsComplete()
     {
         return true;
 
