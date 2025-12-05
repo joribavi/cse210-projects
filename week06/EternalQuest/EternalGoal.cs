@@ -21,9 +21,13 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-      string sample = "";
+        string shortName = GetshortName();
 
-        return sample;
+      string description = GetDescription(); 
+      string representation = $"Goal Name: {shortName}, Goal Description: {description}" ;
+      return representation;
+
+
     }
 
 }

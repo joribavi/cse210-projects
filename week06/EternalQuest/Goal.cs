@@ -38,7 +38,10 @@ public class Goal
 
     public virtual string GetStringRepresentation()
     {
-      string representation = "";
+       string shortName = GetshortName();
+
+      string description = GetDescription(); 
+      string representation = $"Goal Name: {shortName}, Goal Description: {description}" ;
       return representation;
 
     }

@@ -1,3 +1,5 @@
+using System.IO; 
+
 public  class GoalManager
 {
     private List<Goal>_goals = new ();
@@ -45,7 +47,7 @@ public  class GoalManager
             }
           else if (optionChosen == "3")
             {
-             Console.WriteLine("You chose option 3");
+              SaveGoals();
             }
 
              else if (optionChosen == "4")
@@ -183,7 +185,21 @@ public  class GoalManager
 
     public void SaveGoals()
     {
-        
+        Console.WriteLine("What is the name of the file? ");
+        string fileName = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+             foreach (Goal goal in _goals)
+            {
+               string goalDetails =  goal.GetStringRepresentation() ;
+               outputFile.WriteLine($"****{goalDetails}****");
+
+            }
+             
+          
+
+    
+        }
     }
     
     public void LoadGoals()

@@ -38,14 +38,17 @@ public class CheckListGoal : Goal
 
        string description = GetDescription(); 
 
-       string detailString = "."+ "" + "[]"+ shortName + "" + "(" + description + ")" + "---Curruntly Completed: 0/0";
-        return detailString;
+       string detailString = "."+ "" + "[]"+ shortName + "" + "(" + description + ")" + "---Curruntly Completed: " + _amountCompleted +  "/" + _target ;
+       return detailString;
 
     }
 
     public override string GetStringRepresentation()
     {
-      string representation = "";
+      string shortName = GetshortName();
+
+      string description = GetDescription(); 
+      string representation = $"Goal Name: {shortName}, Goal Description: {description}, Amount Completed: {_amountCompleted}, Target: {_target}, Bonus: {_bonus}" ;
       return representation;
 
     }
