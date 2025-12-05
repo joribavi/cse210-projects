@@ -139,10 +139,26 @@ public  class GoalManager
                     _goals.Add(eternalGoal);
                     keepOnMenu = false;  
 
-                    keepOnMenu = false;  
                     break;
                     case 3:
-                    Console.WriteLine("Option 3");
+                    Console.Write("What is the name of your Goal? ");
+                    string checkListGoalName = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string  checkListGoalDescription = Console.ReadLine();
+                    Console.Write("What is the amount of points associated with this Goal? ");
+                    string checkListGoalPointsString = Console.ReadLine();
+                    int checkListGoalPoints = int.Parse(checkListGoalPointsString);
+                    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+                    string targetGoalString = Console.ReadLine();
+                    int targetGoal = int.Parse(targetGoalString);
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
+                    string bonusGoalString = Console.ReadLine();
+                    int bonusGoal = int.Parse(bonusGoalString);
+    
+
+                    CheckListGoal checkListGoal = new(checkListGoalName,checkListGoalDescription,checkListGoalPoints,0,targetGoal,bonusGoal);
+                    _goals.Add(checkListGoal);
+                    
                     keepOnMenu = false;  
                     break;
 

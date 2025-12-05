@@ -33,8 +33,13 @@ public class CheckListGoal : Goal
 
     public override string  GetDetailsString()
     {
-        string sample = "";
-        return sample;
+
+       string shortName = GetshortName();
+
+       string description = GetDescription(); 
+
+       string detailString = "."+ "" + "[]"+ shortName + "" + "(" + description + ")" + "---Curruntly Completed: 0/0";
+        return detailString;
 
     }
 

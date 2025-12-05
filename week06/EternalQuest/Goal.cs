@@ -43,4 +43,16 @@ public class Goal
 
     }
 
+    //getters 
+    public string GetshortName()
+    {
+        return _shortName;
+    } 
+
+    public string GetDescription()
+    {
+        return _description;
+    } 
+
+
 }
