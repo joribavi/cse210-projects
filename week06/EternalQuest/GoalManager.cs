@@ -78,11 +78,15 @@ public  class GoalManager
     public void ListGoalNames()
     {
         Console.WriteLine("The goals are: ");
+        int goalNumber = 1;
         foreach (Goal goal in _goals)
         {
+            
             string goalDetails = goal.GetDetailsString();
-            Console.WriteLine(goalDetails);
+            Console.WriteLine($"{goalNumber}{goalDetails}");
+            goalNumber++; 
         }
+  
 
     }
 
@@ -124,7 +128,17 @@ public  class GoalManager
 
                     break; 
                     case 2:
-                    Console.WriteLine("option 2");
+                    Console.Write("What is the name of your Goal? ");
+                    string eternalGoalName = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string  eternalGoalDescription = Console.ReadLine();
+                    Console.Write("What is the amount of points associated with this Goal? ");
+                    string eternalGoalPointsString = Console.ReadLine();
+                    int eternalGoalPoints = int.Parse(eternalGoalPointsString);
+                    EternalGoal eternalGoal = new(eternalGoalName,eternalGoalDescription,eternalGoalPoints);
+                    _goals.Add(eternalGoal);
+                    keepOnMenu = false;  
+
                     keepOnMenu = false;  
                     break;
                     case 3:

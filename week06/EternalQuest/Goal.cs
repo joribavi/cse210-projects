@@ -31,7 +31,7 @@ public class Goal
 
     public virtual string GetDetailsString()
     {
-        string detailString = "1." + "" + "[]"+ _shortName + "" + "(" + _description + ")";
+        string detailString = "."+ "" + "[]"+ _shortName + "" + "(" + _description + ")";
         return detailString;
 
     }
