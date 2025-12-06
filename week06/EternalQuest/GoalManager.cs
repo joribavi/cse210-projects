@@ -23,7 +23,7 @@ public  class GoalManager
           Console.WriteLine("   2.List Goals");
           Console.WriteLine("   3.Save Goals");
           Console.WriteLine("   4.Load Goals");
-          Console.WriteLine("   5.Save Goals");  
+          Console.WriteLine("   5.Record Event");  
           Console.WriteLine("   6.Quit");
 
 
@@ -52,7 +52,7 @@ public  class GoalManager
 
              else if (optionChosen == "4")
             {
-             Console.WriteLine("You chose option 4");
+             LoadGoals();
             }
 
              else if (optionChosen == "5")
@@ -192,7 +192,7 @@ public  class GoalManager
              foreach (Goal goal in _goals)
             {
                string goalDetails =  goal.GetStringRepresentation() ;
-               outputFile.WriteLine($"****{goalDetails}****");
+               outputFile.WriteLine($"{goalDetails}");
 
             }
              
@@ -204,7 +204,51 @@ public  class GoalManager
     
     public void LoadGoals()
     {
-        
+        Console.Write("What is the filename for the goal file? ");
+        string fileName = Console.ReadLine();
+
+        string[] lines = System.IO.File.ReadAllLines(fileName);
+        char[] delimiterChars = [':',','];  //adding two delimeters 
+
+        foreach (string line in lines )
+        {
+            string[] parts = line.Split(delimiterChars);
+            
+            string goalType = parts[0];
+            string shortName = parts[1];
+            string description = parts[2];
+            string pointsString = parts[3];
+            int points = int.Parse(pointsString);
+
+
+            if (goalType == "Simple Goal")
+            {
+                 SimpleGoal simpleGoal = new(shortName,description,points);
+                 _goals.Add(simpleGoal);
+
+            }
+
+            else if (goalType == "Eternal Goal")
+            {
+               EternalGoal eternalGoal = new(shortName,description,points);
+                _goals.Add(eternalGoal);
+            }
+
+            else if (goalType == "Check List Goal")
+            {
+              string amountCompletedString = parts[4];  
+              int amountCompleted = int.Parse(amountCompletedString);
+              string targetString = parts[5];
+              int target = int.Parse(targetString);
+              string bonusString = parts[6];
+              int bonus = int.Parse(bonusString);
+              CheckListGoal checkListGoal = new(shortName,description,points,amountCompleted,target,bonus);
+               _goals.Add(checkListGoal);
+            }
+          
+           
+
+        }
         
     }
 }

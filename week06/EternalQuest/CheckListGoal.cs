@@ -45,10 +45,11 @@ public class CheckListGoal : Goal
 
     public override string GetStringRepresentation()
     {
+      int points = GetPoints();
       string shortName = GetshortName();
 
       string description = GetDescription(); 
-      string representation = $"Goal Name: {shortName}, Goal Description: {description}, Amount Completed: {_amountCompleted}, Target: {_target}, Bonus: {_bonus}" ;
+      string representation = $"Check List Goal: {shortName}, {description}, {points}, {_amountCompleted}, {_target}, {_bonus}" ;
       return representation;
 
     }

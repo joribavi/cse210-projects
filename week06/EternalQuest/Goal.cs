@@ -57,5 +57,11 @@ public class Goal
         return _description;
     } 
 
+        public int GetPoints()
+    {
+        return _points;
+    } 
+
+
 
 }

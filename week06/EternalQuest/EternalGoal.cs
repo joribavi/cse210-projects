@@ -21,10 +21,11 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        string shortName = GetshortName();
+     string shortName = GetshortName();
+     int points = GetPoints();
 
       string description = GetDescription(); 
-      string representation = $"Goal Name: {shortName}, Goal Description: {description}" ;
+      string representation = $"Eternal Goal: {shortName}, {description}, {points}" ;
       return representation;
 
 
