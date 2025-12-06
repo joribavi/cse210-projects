@@ -17,7 +17,7 @@ public  class GoalManager
         while(true)
         {
           Console.WriteLine("");
-          Console.WriteLine($"You have {_score} points");
+          DisplayPlayerInfo();
           Console.WriteLine("");
           Console.WriteLine("Menu Options:");
           Console.WriteLine("   1.Create a New Goal");
@@ -73,6 +73,7 @@ public  class GoalManager
                        goal.RecordEvent();
                        int points =  goal.GetPoints();
                          _score = _score + points;
+                         
                     }
                    
                   } 
@@ -117,7 +118,7 @@ public  class GoalManager
 
     public void DisplayPlayerInfo()
     {
-        
+         Console.WriteLine($"You have {_score} points");
     }
 
     public void ListGoalNames()
@@ -293,5 +294,11 @@ public  class GoalManager
 
         }
         
+    }
+
+    //getter for score    
+    public int GetScore()
+    {
+        return _score;
     }
 }
