@@ -11,7 +11,8 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        
+         int points = GetPoints();  
+         Console.Write($"Congratulations! You have earned {points} points");
     }
 
     public override bool IsComplete()

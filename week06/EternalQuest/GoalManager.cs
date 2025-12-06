@@ -18,6 +18,7 @@ public  class GoalManager
         {
           Console.WriteLine("");
           Console.WriteLine($"You have {_score} points");
+          Console.WriteLine("");
           Console.WriteLine("Menu Options:");
           Console.WriteLine("   1.Create a New Goal");
           Console.WriteLine("   2.List Goals");
@@ -57,7 +58,49 @@ public  class GoalManager
 
              else if (optionChosen == "5")
             {
-             Console.WriteLine("You chose option 5");
+                Console.Write("Which goal did you acomplish ");
+
+               string response  = Console.ReadLine(); 
+               int responseInt = int.Parse(response);
+               if (_goals.Count > 1 )
+                {
+                   int goalIndex = responseInt - 1 ;
+                   Goal responseChosen = _goals[goalIndex];
+                    foreach (Goal goal in _goals)
+                  {
+                    if (goal == responseChosen)
+                    {
+                       goal.RecordEvent();
+                       int points =  goal.GetPoints();
+                         _score = _score + points;
+                    }
+                   
+                  } 
+
+                         
+                }
+            
+               else if (_goals.Count == 1)
+                {
+                   
+                   Goal unicGoal = _goals[0];
+
+                    foreach (Goal goal in _goals)
+                  {
+                    if (goal == unicGoal)
+                    {
+                       goal.RecordEvent();
+                       int points =  goal.GetPoints();
+                         _score += points;
+                    } 
+
+                }
+                }  
+                else
+                {
+                    Console.WriteLine("Please add a goal before recording an event");
+                }
+                 
             }
 
 
